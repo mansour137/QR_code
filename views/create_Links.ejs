@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+    <h1>QR Code Generator</h1>
+    <div class="qr-code">
+        <form id="linkForm" action="/submit" method="post">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Your Name</span>
+                </div>
+                <input type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+
+            <div id="linkContainer">
+                <div class="link-item">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Social name & Links</span>
+                        </div>
+                        <input type="text" class="form-control" name="name1" placeholder="Social" required>
+                        <input type="text" class="form-control" name="link1" placeholder="Your Link" required>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="linkCount" name="linkCount" value="1">
+            <button class="btn btn-info" type="button" onclick="addLink()">Add Link</button>
+            <br><br>
+            <button class="btn btn-yahoo" type="submit" name="LINKS">Submit</button>
+        </form>
+    </div>
+    <br>
+    <p class=" ">Scan the QR code with your mobile device.</p>
+</div>
+
+<%- include('partials/footer') %>

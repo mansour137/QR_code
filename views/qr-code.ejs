@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+    <h1>QR Code Generator</h1>
+    <div class="qr-code">
+        <img src="<%= qrCodeUrl %>" class="img" alt="QR Code">
+    </div>
+    <div class="card-body">
+        <a class="btn btn-info" href="/create" role="button">
+            <i class="fab "></i>
+            add new link
+        </a>
+        <a class="btn btn-warning" href="/admin/<%= username %>" role="button">
+            <i class="fab "></i>
+            Update my QR code
+        </a>
+    </div>
+    <p class=" ">Scan the QR code with your mobile device.</p>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+
+<div class="container text-center">
+    <h1>Links for <%= name %></h1>
+    <div class="card-body">
+            <ul class="list-group">
+                <% links.forEach((link) => { %>
+                    <li class="list-group-item" style="color: darkslategray; font-size: x-large; font-family: Arial, sans-serif; display: flex; align-items: center;">
+                        <div style="flex-grow: 1;">
+                            <% if (link.socialName === 'Gmail') { %>
+                                <%= link.socialName %> =>> (<%= link.link %>)
+                            <% }else if(link.socialName === 'Phone'){%>
+                                    <%= link.socialName %> =>> (<%= link.link %>)
+                                <% } else { %>
+                                <a class="social-link" style="color: darkslategray; font-size: x-large; font-family: Arial, sans-serif" href="<%= link.link %>"><%= link.socialName %></a>
+                            <% } %>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+            <br>
+    </div>
+    <hr>
+    <p class=" ">Click On URL To Contact With <%= name %></p>
+</div>
+
+<%- include('partials/footer') %>
+

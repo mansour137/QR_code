@@ -1,0 +1,47 @@
+</body>
+
+
+<script>
+    var linkCount = 1;
+
+    function addLink() {
+        linkCount++;
+
+        var linkContainer = document.getElementById("linkContainer");
+        var linkItem = document.createElement("div");
+        linkItem.className = "link-item";
+
+        var inputGroup = document.createElement("div");
+        inputGroup.className = "input-group";
+
+        var prependDiv = document.createElement("div");
+        prependDiv.className = "input-group-prepend";
+
+        var span = document.createElement("span");
+        span.className = "input-group-text";
+        span.textContent = "Social name & Links";
+
+        var linkInput = document.createElement("input");
+        linkInput.type = "text";
+        linkInput.className = "form-control";
+        linkInput.name = "link" + linkCount;
+        linkInput.placeholder = "Your Link";
+
+        var nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.className = "form-control";
+        nameInput.name = "name" + linkCount;
+        nameInput.placeholder = "Social";
+
+        prependDiv.appendChild(span);
+        inputGroup.appendChild(prependDiv);
+        inputGroup.appendChild(nameInput);
+        inputGroup.appendChild(linkInput);
+        linkItem.appendChild(inputGroup);
+        linkContainer.appendChild(linkItem);
+
+        // Update the hidden input value with the current link count
+        document.getElementById("linkCount").value = linkCount;
+    }
+</script>
+</html>

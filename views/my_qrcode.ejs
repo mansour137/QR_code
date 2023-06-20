@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+    <h1>Enter your name to get QR Code</h1>
+    <div class="qr-code">
+        <form id="linkForm" action="/admin" method="post">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Your Name</span>
+                </div>
+                <input type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            <button class="btn btn-yahoo" type="submit" name="LINKS">Submit</button>
+        </form>
+    </div>
+    <br>
+    <p class=" ">Scan the QR code with your mobile device.</p>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+    <h1>QR Code Generator</h1>
+    <div class="qr-code">
+        <form id="linkForm" action="/submit" method="post">
+            <div id="linkContainer">
+                <div class="link-item">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Social name & Links</span>
+                        </div>
+                        <input type="text" class="form-control" name="link[]" placeholder="Social">
+                        <input type="text" class="form-control" name="name[]" placeholder="Your Link">
+                    </div>
+                </div>
+            </div>
+            <button class="btn-adn" type="button" onclick="addLink()">Add Link</button>
+            <br><br>
+            <button class="btn-vimeo" type="submit" name="LINKS">Submit</button>
+        </form>
+    </div>
+    <p class=" ">Scan the QR code with your mobile device.</p>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+
+<div class="container text-center">
+    <h1>Update your Links <%= name %></h1>
+    <div class="card-body">
+
+        <form action="/delete" method="post">
+            <input type="hidden" name="Client_name" value="<%= name %>">
+            <ul class="list-group">
+                <% links.forEach((link) => { %>
+                    <li class="list-group-item" style="color: darkslategray; font-size: x-large; font-family: Arial, sans-serif; display: flex; align-items: center;">
+                        <input type="checkbox" name="delete" value="<%= link._id %>" style="margin-right: 10px;">
+                        <div style="flex-grow: 1;">
+                            <% if (link.link === 'GMAIL') { %>
+                                <%= link.socialName %> =>> (<%= link.link %>)
+                            <% } else { %>
+                                <a class="social-link" style="color: darkslategray; font-size: x-large; font-family: Arial, sans-serif" href="<%= link.link %>"><%= link.socialName %></a>
+                            <% } %>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+            <br>
+            <button class="btn btn-warning" type="submit">Delete Selected Items</button>
+        </form>
+        <hr>
+        <br>
+        <h3> your QR code</h3>
+        <div class="qr-code">
+            <img src="<%= qrCodeUrl %>" class="img" alt="QR Code">
+        </div>
+
+    </div>
+    <hr>
+    <div class="card-body">
+        <a class="btn btn-info" href="/create" role="button">
+            <i class="fab "></i>
+            add new link
+        </a>
+        <a class="btn btn-success" href="/admin" role="button">
+            <i class="fab "></i>
+            My QR code
+        </a>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+

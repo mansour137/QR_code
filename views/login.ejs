@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+   <div class="containerQR">
+    <h1>QR Code Generator
+        <img class="img" src="https://static.vecteezy.com/system/resources/previews/002/557/391/original/qr-code-for-scanning-free-vector.jpg" alt="QR Code Logo" width="50">
+    </h1>
+   </div>
+       <div class="qr-code">
+        <div class="card-body">
+<!--            <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">-->
+            <a class="btn btn-block btn-social btn-reddit" href="" role="button">
+                <i class="fab fa-google"></i>
+                Sign with Google
+            </a>
+        </div>
+        <div class="card-body">
+            <a class="btn btn-light" href="/create" role="button">
+                <i class="fab "></i>
+                Create QR code
+            </a>
+            <a class="btn btn-info" href="/admin" role="button">
+                <i class="fab "></i>
+                MY QR code
+            </a>
+        </div>
+    </div>
+    <p>Scan the QR code with your mobile device.</p>
+</div>
+<%- include('partials/footer') %>
