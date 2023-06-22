@@ -1,6 +1,5 @@
 </body>
 
-
 <script>
     var linkCount = 1;
 
@@ -26,17 +25,28 @@
         linkInput.className = "form-control";
         linkInput.name = "link" + linkCount;
         linkInput.placeholder = "Your Link";
+        linkInput.required = true; // Make link input required
 
         var nameInput = document.createElement("input");
         nameInput.type = "text";
         nameInput.className = "form-control";
         nameInput.name = "name" + linkCount;
         nameInput.placeholder = "Social";
+        nameInput.required = true; // Make name input required
+
+        var deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "btn btn-danger";
+        deleteButton.textContent = "x";
+        deleteButton.onclick = function() {
+            linkItem.remove(); // Remove the linkItem from the DOM
+        };
 
         prependDiv.appendChild(span);
         inputGroup.appendChild(prependDiv);
         inputGroup.appendChild(nameInput);
         inputGroup.appendChild(linkInput);
+        inputGroup.appendChild(deleteButton);
         linkItem.appendChild(inputGroup);
         linkContainer.appendChild(linkItem);
 

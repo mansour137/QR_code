@@ -90,7 +90,8 @@ app.get('/admin/:name' , (req ,res)=>{
                 numLinks : result.num_links,
                 qrCodeUrl : result.qrcodeImg,
             })
-        }).catch(err => res.render('error' , {error : 'invalid name or create new QR code '} ))
+        })
+        .catch(err => res.render('error' , {error : 'invalid name or create new QR code '} ))
 })
 
 app.get('/admin' , (req, res)=>{
@@ -110,7 +111,7 @@ app.post('/delete' , (req,res)=>{
     console.log( name, deleted_Link);
     User.findOneAndUpdate({name : name} ,
         {
-        $pull:{links: {_id :deleted_Link } } })
+        $pull:{links: { _id : deleted_Link } } })
         .then(()=>{
             console.log('success deleted');
             res.redirect(`/Admin/${name}`)
