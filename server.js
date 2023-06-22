@@ -122,7 +122,7 @@ app.post('/delete' , (req,res)=>{
 app.get('/qr-code/:name?',(req,res)=> {
         const username = req.params.name;
 
-        let url = `http://localhost:8080/data/${username}`;
+        let url = `https://qr-code-qxdk.onrender.com/data/${username}`;
         let jsonData = JSON.stringify(url);
         qr.toDataURL(jsonData,(err,qrResponse)=>{
             if(err)
